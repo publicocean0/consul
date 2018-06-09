@@ -22,5 +22,5 @@ COPY bin/* /usr/local/bin/
 HEALTHCHECK --interval=30s --timeout=20s --retries=10 CMD curl --fail -s $HEALTH_URL || exit 1
 
 ENTRYPOINT ["/usr/local/bin/containerpilot", "/usr/local/bin/docker-entrypoint.sh" ]
-CMD ["agent", "-server", "-bootstrap-expect", "3", "-ui", "-client=0.0.0.0", "-retry-interval", "5s", "--log-level", "warn", "-disable-host-node-id"]
+CMD ["agent", "-server", "-bootstrap-expect", "1", "-ui", "-client=0.0.0.0", "-retry-interval", "5s", "--log-level", "warn", "-disable-host-node-id"]
 
