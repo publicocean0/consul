@@ -4,7 +4,7 @@ version: "3"
 services:
 
   consul:
-    image: sdelrio/consul${TAG}
+    image: publicocean0/consul${TAG}
     labels: [app=consul]
     ports:
         - "8500:8500"
@@ -16,7 +16,7 @@ services:
         - CONSUL=consul
         - CONSUL_CHECK_LEADER=true
     deploy:
-        replicas: 3
+        replicas: 1
         placement:
             constraints: [node.role == manager]
         resources:
